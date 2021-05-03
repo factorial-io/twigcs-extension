@@ -6,7 +6,7 @@ Custom twigcs rule extending offical twics rules.
 ## Installation
 
 ```
-composer1 require factorial-io/twigcs
+composer require factorial-io/twigcs
 ```
 
 ## Usage
