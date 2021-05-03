@@ -6,11 +6,11 @@ Custom twigcs rule extending offical twics rules.
 ## Installation
 
 ```
-composer install factorial/twigcs
+composer install factorial-io/twigcs
 ```
 
 ## Usage
 
 ```bash
-./vendor/bin/twics /path/to/views/ --ruleset factorial\\twigcs\\TwigCsRuleset
+./vendor/bin/twics /path/to/views/ --ruleset Factorial\\twigcs\\TwigCsRuleset
 ```

@@ -1,6 +1,6 @@
 <?php
 
-namespace factorial\twigcs;
+namespace Factorial\twigcs;
 
 use FriendsOfTwig\Twigcs\Lexer;
 use FriendsOfTwig\Twigcs\Rule\AbstractRule;
