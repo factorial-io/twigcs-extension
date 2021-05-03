@@ -1,0 +1,21 @@
+{
+  "name": "factorial/twigcs",
+  "description": "description",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "version": "1.0.23",
+  "authors": [
+    {
+      "name": "D34dMan",
+      "email": "shibinkidd@gmail.com"
+    }
+  ],
+  "require": {
+    "friendsoftwig/twigcs": "^5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "factorial\\twigcs\\": "src"
+    }
+  }
+}
