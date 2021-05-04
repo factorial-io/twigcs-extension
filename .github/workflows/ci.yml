@@ -4,10 +4,12 @@ on: [push]
 
 jobs:
   functional-tests:
-    - name: PHPUnit tests
-      uses: php-actions/phpunit@v2
-      with:
-        version: 9
-        php_version: 7.4
-        configuration: /phpunit.xml.dist
-        memory_limit: 256M
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: php-actions/composer@v5
+      - name: PHPUnit Tests
+        uses: php-actions/phpunit@v2
+        with:
+          bootstrap: vendor/autoload.php
+          configuration: /phpunit.xml.dist
