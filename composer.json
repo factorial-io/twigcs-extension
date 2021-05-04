@@ -13,9 +13,17 @@
   "require": {
     "friendsoftwig/twigcs": "^5.0"
   },
+  "require-dev": {
+    "phpunit/phpunit": "^8.0 || ^9.0"
+  },
   "autoload": {
     "psr-4": {
       "Factorial\\twigcs\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Factorial\\Twigcs\\Tests\\": "tests/"
     }
   }
 }
