@@ -1,9 +1,9 @@
 {
-  "name": "factorial-io/twigcs",
-  "description": "description",
+  "name": "factorial-io/twigcs-extension",
+  "description": "Factorial specific ruleset extending official ruleset from twigcs",
   "minimum-stability": "stable",
-  "license": "proprietary",
-  "version": "1.0.24",
+  "license": "MIT",
+  "version": "1.0.25",
   "authors": [
     {
       "name": "D34dMan",
