@@ -25,5 +25,11 @@
     "psr-4": {
       "Factorial\\Twigcs\\Tests\\": "tests/"
     }
-  }
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "bin": [
+    "bin/factorial-io-twigcs"
+  ]
 }
