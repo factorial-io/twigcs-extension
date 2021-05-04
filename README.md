@@ -6,18 +6,21 @@ Custom twigcs rule extending offical twics rules.
 ## Installation
 
 Until this repository is available on packagist, please add the project manually into composer.json
-Please refer https://getcomposer.org/doc/05-repositories.md to learn more about adding custom repositories to the project.
+
 ```
 {
     ...
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.com:factorial-io/twigcs.git"
+            "url": "git@github.com:factorial-io/twigcs-extension.git"
         }
     ],
+    ...
 ```
+In case you want to learn more about adding a custom project to composer.json, please refer official documenation at https://getcomposer.org/doc/05-repositories.md.
 
+Run composer require to add the package to your project.
 ```
 composer require factorial-io/twigcs
 ```
