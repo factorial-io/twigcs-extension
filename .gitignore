@@ -1,4 +1,7 @@
 composer.lock
-vendor
 .idea
 .phpunit.result.cache
+/vendor/
+/bin/
+!/bin/factorial-io-twigcs
+twigcs.phar
