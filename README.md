@@ -28,5 +28,6 @@ composer require factorial-io/twigcs
 ## Usage
 
 ```bash
-./vendor/bin/twics /path/to/views/ --ruleset Factorial\\twigcs\\TwigCsRuleset
+./vendor/bin/twigcs /path/to/views/ --ruleset Factorial\\twigcs\\TwigCsRuleset
 ```
+Where, `/path/to/views` is the folder to scan for the twig files.
