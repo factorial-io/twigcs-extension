@@ -1,15 +1,27 @@
-name: CI
-
 on: [push]
 
+name: CI Tests
+
 jobs:
-  functional-tests:
-    runs-on: ubuntu-latest
+  run:
+    runs-on: ${{ matrix.operating-system }}
+    strategy:
+      matrix:
+        operating-system: [ ubuntu-latest, macos-latest ]
+        php-versions: [ '7.3', '7.4', '8.0' ]
+    name: PHP ${{ matrix.php-versions }} Test on ${{ matrix.operating-system }}
     steps:
-      - uses: actions/checkout@v2
-      - uses: php-actions/composer@v5
-      - name: PHPUnit Tests
-        uses: php-actions/phpunit@v2
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
-          bootstrap: vendor/autoload.php
-          configuration: /phpunit.xml.dist
+          php-version: ${{ matrix.php-versions }}
+          tools: phpunit
+
+      - name: Install dependencies
+        run: composer --prefer-source -n install
+
+      - name: Launch test
+        run: bin/phpunit
