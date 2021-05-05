@@ -3,7 +3,6 @@
   "description": "Factorial specific ruleset extending official ruleset from twigcs",
   "minimum-stability": "stable",
   "license": "MIT",
-  "version": "1.0.25",
   "authors": [
     {
       "name": "D34dMan",
