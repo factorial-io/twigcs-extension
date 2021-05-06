@@ -1,5 +1,7 @@
 # factorial-io/twigcs-extension
 
+<a href="https://github.com/factorial-io/twigcs-extension/actions?query=workflow%3Aci+branch%3Amaster"><img alt="Build status" src="https://github.com/factorial-io/twigcs-extension/workflows/ci/badge.svg?branch=master"></a>
+
 Custom twigcs ruleset extending `Official` twigcs ruleset.
 
 ## Installation
