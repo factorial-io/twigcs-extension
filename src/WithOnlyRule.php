@@ -20,8 +20,16 @@ class WithOnlyRule extends AbstractRule implements RuleInterface {
     $violations = [];
 
     while (!$tokens->isEOF()) {
+      // We don't check for "with" rule inside "embed" block.
+      $this->escapeEmbedBlock($tokens);
       $token = $tokens->getCurrent();
-      $violations = array_merge($violations, $this->validateWithUsedWithOnly($token, $tokens));
+      if ($tokens->isEOF()) {
+        break;
+      }
+      // Check for with rule inside "include" block.
+      if ($new_violations = $this->validateWithUsedWithOnly($token, $tokens)) {
+        $violations = array_merge($violations, $new_violations);
+      }
       $tokens->next();
     }
 
@@ -29,12 +37,25 @@ class WithOnlyRule extends AbstractRule implements RuleInterface {
   }
 
   /**
-   * @param Token $token
-   * @param TokenStream $tokens
-   * @return array
-   * @throws \FriendsOfTwig\Twigcs\TwigPort\SyntaxError
+   * Escape embed block.
    */
-  public function validateWithUsedWithOnly(Token $token, TokenStream $tokens): array
+  protected function escapeEmbedBlock(TokenStream &$tokens) {
+    $token = $tokens->getCurrent();
+    if (Token::NAME_TYPE === $token->getType() && $token->getValue() == 'embed') {
+      while (!$tokens->isEOF()) {
+        $token = $tokens->getCurrent();
+        if (Token::BLOCK_END_TYPE === $token->getType()) {
+          break;
+        }
+        $tokens->next();
+      }
+    }
+  }
+
+  /**
+   * Validator for with followed by only.
+   */
+  public function validateWithUsedWithOnly(Token $token, TokenStream &$tokens): array
   {
     $violations = [];
     if (Token::NAME_TYPE === $token->getType() && $token->getValue() == 'with') {
