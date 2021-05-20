@@ -8,6 +8,6 @@
   PASS: {% include "@elements/icon/icon.twig" with {} only %}
   PASS: {% include "@elements/icon/icon.twig" with {with} only %}
   PASS: {% include "@elements/icon/icon.twig" with {only} only %}
-  PASS: {% embed "@elements/icon/icon.twig" with {} %}
-  PASS: {% embed "@elements/icon/icon.twig" with {foo} %}
+  PASS: {% embed "@elements/icon/icon.twig" with {} %}{% endembed %}
+  PASS: {% embed "@elements/icon/icon.twig" with {foo} %}{% endembed %}
 </header>
