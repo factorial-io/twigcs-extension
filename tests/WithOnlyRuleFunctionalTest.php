@@ -35,9 +35,9 @@ class WithOnlyRuleFunctionalTest extends TestCase
     public function getData()
     {
         return [
-            // NOTE: We expect exactly 9 violations in the fail scenario.
+            // NOTE: We expect exactly 15 violations in the fail scenario.
             // In case we add more, don't forget to update violation count.
-            [$this->getFailScenarios(), 9],
+            [$this->getFailScenarios(), 15],
             [$this->getPassScenarios(), 0],
         ];
     }
