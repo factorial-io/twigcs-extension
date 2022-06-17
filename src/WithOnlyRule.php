@@ -62,7 +62,7 @@ class WithOnlyRule extends AbstractRule implements RuleInterface {
       if (Token::WHITESPACE_TYPE === $tokens->look(Lexer::NEXT_TOKEN)->getType()) {
         if (Token::NAME_TYPE === $tokens->look(2)->getType()) {
           if (Token::WHITESPACE_TYPE === $tokens->look(3)->getType() && $tokens->look(4)->getValue() !== 'only') {
-            $violations[] = $this->createViolation($tokens->getSourceContext()->getPath(), $token->getLine(), '0', '"with" should be used along with "only"');
+            $violations[] = $this->createViolation($tokens->getSourceContext()->getPath(), $token->getLine(), '0', '"with" should be used along with "only".');
           }
         }
         // If it starts "with" and is "{" count till matching "}"
@@ -83,7 +83,7 @@ class WithOnlyRule extends AbstractRule implements RuleInterface {
             }
           }
           if (!($tokens->look($look_ahead_position)->getValue() == 'only' || $tokens->look($look_ahead_position + 1)->getValue() == 'only')) {
-            $violations[] = $this->createViolation($tokens->getSourceContext()->getPath(), $token->getLine(), '0', '"with" should be used along with "only"');
+            $violations[] = $this->createViolation($tokens->getSourceContext()->getPath(), $token->getLine(), '0', '"with" should be used along with "only".');
           }
         }
       }
