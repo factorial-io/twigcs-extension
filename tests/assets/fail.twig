@@ -26,4 +26,7 @@
   FAIL: {% include "@elements/icon/icon.twig" with {
     only
   } %}
+  FAIL: {{ content|raw }}
+  FAIL: {# Lorem ipsum dolor sit amet. #} {{ content|raw }}
+
 </header>
