@@ -26,12 +26,12 @@ class RawFilterRule extends AbstractRule implements RuleInterface {
       }
       $token = $tokens->getCurrent();
       if ($new_violations = $this->validateRawFilterComment($token, $tokens)) {
-        $violations[] = $new_violations;
+        $violations = array_merge($violations, $new_violations);
       }
       $tokens->next();
     }
 
-    return array_merge(...$violations);
+    return $violations;
   }
 
   /**
