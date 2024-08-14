@@ -13,10 +13,11 @@ class TwigCsRuleset extends Official {
   /**
    * @{inheritdoc}
    */
-  public function getRules() {
+  public function getRules(): array {
     $rules = parent::getRules();
     return array_merge($rules, [
       new WithOnlyRule(Violation::SEVERITY_ERROR),
+      new RawFilterRule(Violation::SEVERITY_WARNING),
     ]);
   }
 
